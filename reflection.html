@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회고</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-color: #34495e;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 60px;
+            box-sizing: border-box;
+            text-align: left;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #f1c40f;
+            margin-bottom: 30px;
+            text-align: center;
+            width: 100%;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .content-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 900px;
+            width: 100%;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        .content-box p {
+            margin-bottom: 15px;
+            word-break: keep-all;
+        }
+
+        .highlight {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 100;
+            padding: 20px;
+        }
+
+        .nav-btn:hover {
+            color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Custom Scrollbar */
+        .content-box::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .content-box::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .content-box::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Slide 1: 결과 분석 -->
+        <div class="slide active">
+            <h2>결과 분석: 긍정적인 점</h2>
+            <div class="content-box">
+                <p>친구들의 결과를 들어보고 친구들이 평소에 했던 말들이나 이야기를 돌이켜 봤을 때 그때 행동이나 말이 더 잘 이해가 된다고 생각되어 큰 틀에서의 대분류는 성공했다고 생각이
+                    들었습니다.
+                </p>
+                <p>어렸을 때부터 무언가를 만드는 것을 좋아했다고 들었었는데 이번에 실제로 코딩을 모르지만 하나하나 시간을 투입해서 게임의 기능이 없지만, 웹페이지를 만들고 질문과 답변을 설계하는
+                    과정에서 오랜만에 무엇인가 만드는 재미를 느껴서 예상하지 못했던 긍정적인 점을 발견했습니다.</p>
+                <p>타인과 이야기를 나눌 때 결과나 질문지를 가지고 이야기 하다 보니 더 구체적으로 삶의 의미에 대해서 이야기해볼 수 있었던 점이 좋았습니다.</p>
+                <p>아직 명확하게 제 삶의 가치관을 찾지는 못했지만, <span class="highlight">“뭘 고민해야 하지?”</span>라는 실체 없는 고민이어서 답답했다면 이제는 내
+                    삶에서
+                    성장이라는 가치는 어떤 의미일까, 얼마나 중요할까 등 구체적인 질문에 답을 고민하는 것 자체가 동기부여가 되었습니다.</p>
+                <p>현재 집중하며 고민하고 있는 점은 가족에 관한 가치관이 가장 헷갈리는 것 같습니다.</p>저는 돈을 크게 신경쓰지 않는다고
+                생각했었는데, 부모님께 무언가 원하는만큼 해드릴 수 없다고 생각하니 돈이 또 중요한것 같고, 워라밸을 중요하게 생각하지 않는다고 생각했었는데 취직한 친구들의 말을 들어봤을 때,
+                내가 결혼하고 가정이 생겼을 때도 워라밸이 중요하지 않을까 고민이 되는 것 같습니다.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: 아쉬웠던 점 & 고민거리 -->
+        <div class="slide">
+            <h2>아쉬웠던 점 & 고민거리</h2>
+            <div class="content-box">
+                <p><strong>아쉬웠던 점</strong></p>
+                <p>철학적 지식을 늘렸다면 조금 더 의미가 있는 질문과 선택지를 쓸 수 있지 않았을까 생각합니다. 계속 책을 읽어 가며 계속 보완해 나가면 좋을 것 같다고 생각했습니다.</p>
+                <p>텍스트만 있는 버전에서 돌을 굴리는 액션이 들어간 버전으로 업데이트 해서 두 개를 만들어 봤는데, 실제로 돌을 굴리고 나서 질문이 나오는 경우 조금 더 이입이 되어서 응답을 하게
+                    된다는 피드백이 있어서 조금 더 기술적으로 완성도 있게 게임으로 진짜 만들었다면 훨씬 좋은 프로젝트가 되지 않았을까 하는 능력적인 아쉬움이 가장 큰 것 같습니다.</p>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+                <p><strong>고민거리</strong></p>
+                <p>환경에 따른 변화를 어떻게 고려해야 하는지 고민이 생겼습니다.</p>
+                <p>고시 공부를 하는 친구들은 대체로 비슷하게 고통이나 삶에 대해서 의미에 대한 고민을 많이 하지 않고 삶을 반복적이라고 생각하는 타입으로 나왔고, 지금 막 학회나 활동적인 대외활동을
+                    하는 친구들은 열정적인 타입으로 나오는 등 어쩌면 가치관이 그 사람의 선택과 환경을 만든 것이 아니라 반대로 그 사람이 처해 있는 상황이 큰 영향을 미치는 것이고 그렇다면 진짜로
+                    원하는 것을 어떻게 찾을 수 있을지 고민이 되었습니다.</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: 추후 진행 사항 정리 -->
+        <div class="slide">
+            <h2>추후 진행 사항 정리</h2>
+            <div class="content-box">
+                <p><strong>1. 심층 인터뷰 해보기</strong></p>
+                <p>이전엔 친구들과 주제 없이 삶에 대해서 이야기 했다면, 이제는 하나하나의 가치에 대해서 어떻게 생각하고, 그게 어떤 행동으로 이어지는지까지 이야기할 수 있을 것 같아서 친한 친구 한
+                    명 한 명 만나 깊게 인터뷰를 해보면 어떨까 생각해봤습니다.</p>
+                <p>시험기간이라 종강 전에는 심층 인터뷰는 어려울 것 같아서 방학에 모였을 때 계속 물어보고 이야기 해보는 것으로 하기로 했습니다.</p>
+                <br>
+                <p><strong>2. 가치 확장 고민</strong></p>
+                <p>이걸 불특정 다수에게 전달을 했을 때 저에게 어떤 가치를 주기 위한 활동으로 발전시킬 수 있을지 고민해보고 유의미한 결과를 얻어보고 싶습니다.</p>
+                <br>
+                <p><strong>3. 지속적 보완</strong></p>
+                <p>나온 내용을 가지고 질문의 설계와 마지막 타입 설정을 지속적으로 보완해 나갈 생각입니다.</p>
+            </div>
+        </div>
+
+        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="nav-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            } else if (currentSlide >= slides.length) {
+                currentSlide = slides.length - 1;
+            }
+
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

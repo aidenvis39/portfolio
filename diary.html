@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 일기장</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: transparent;
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .diary-cover {
+            width: 100%;
+            max-width: 1000px;
+            height: 90vh;
+            /* 화면 높이의 90% */
+            max-height: 800px;
+            background-color: #3e2723;
+            /* Dark Leather */
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .paper {
+            width: 100%;
+            height: 100%;
+            background-color: #f5f5f0;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            /* 패딩 조정 */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            /* 내용이 넘치면 스크롤 */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 60px;
+            font-weight: 700;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 20px;
+        }
+
+        .content {
+            font-size: 1.3rem;
+            /* Slightly larger */
+            line-height: 2.2;
+            color: #2c3e50;
+            /* Darker text */
+            text-align: justify;
+            flex-grow: 1;
+            font-weight: 600;
+            /* Thicker text */
+        }
+
+        .highlight {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: auto;
+            text-align: right;
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="diary-cover">
+        <div class="paper">
+            <h1>기획자 소개</h1>
+            <div class="content">
+                <p><strong>이름 : 조준성</strong></p>
+                <p><strong>학과 : 경영학과</strong></p>
+                <p><strong>나이 : 25</strong></p>
+                <br>
+                <p><strong>자기를 나타내는 동사 : 찾다</strong></p>
+                <p>돌이켜보면 이때부터 최종 프로젝트의 방향이 결정되었을지도 모르겠습니다.</p>
+                <p>이번 자기혁신 프로젝트도 <span class="highlight">찾는 것</span>이기 때문입니다.</p>
+                <p>지금까지 필요한 일, 해야 할 일을 해왔다 생각했지만, 전역 후 2년 반 만에 다시 다니는 학교에서 저는 처음으로 길을 잃고 말았습니다.</p>
+                <p>발자국은 어지럽게 흩어져 있었고 더 이상 나아갈 길을 보여주지 않았습니다.</p>
+                <p>길을 헤맬 시간조차 없다고 생각하며 발을 움직이려 했지만, 의미를 잃은 발걸음은 앞으로 나가가지 못하고 있었습니다.</p>
+                <p>그래서 그냥 잠시 <span class="highlight">멈추기로</span> 했습니다.</p>
+                <p>이번 프로젝트의 끝에서는 저의 길을 찾길 바라며.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

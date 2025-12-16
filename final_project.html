@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최종 프로젝트 보고서</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-color: #1a252f;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #f1c40f;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p.description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 80%;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .comparison-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            height: 60vh;
+        }
+
+        .comparison-image {
+            max-width: 45%;
+            max-height: 100%;
+            border: 3px solid #34495e;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+        }
+
+        .arrow {
+            font-size: 3rem;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .nav-btn:hover {
+            background-color: rgba(52, 152, 219, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            background-color: #3498db;
+            transition: width 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="progress-bar" id="progress-bar"></div>
+
+        <!-- Slide 1: One-line Summary -->
+        <div class="slide active">
+            <h2>UX 개선</h2>
+            <p class="description">
+                글의 길이 대폭 요약을 통해 직관적으로 질문을 이해하고 답변할 수 있도록 수정하였으며,<br>
+                마지막 페이지에서 자신의 선택에 대한 설명글 또한 대폭 줄이고<br>
+                자신이 어떤 타입인지 직관적으로 알 수 있도록 수정
+            </p>
+        </div>
+
+        <!-- Slide 2: Comparison 1 -->
+        <div class="slide">
+            <h2>UX 개선</h2>
+            <div class="comparison-container">
+                <img src="pic/수정전글예시.png" alt="수정 전 글 예시" class="comparison-image">
+                <div class="arrow">➡</div>
+                <img src="pic/수정후글.png" alt="수정 후 글" class="comparison-image">
+            </div>
+        </div>
+
+        <!-- Slide 3: Comparison 2 -->
+        <div class="slide">
+            <h2>UX 개선</h2>
+            <div class="comparison-container">
+                <img src="pic/수정전글예시2.png" alt="수정 전 글 예시 2" class="comparison-image">
+                <div class="arrow">➡</div>
+                <img src="pic/수정후글2.png" alt="수정 후 글 2" class="comparison-image">
+            </div>
+            <p class="description">응답 선택지의 텍스트량을 줄이고 핵심만 전달하여 선택의 부담을 줄임</p>
+        </div>
+
+        <!-- Slide 4: UI Improvements -->
+        <div class="slide">
+            <h2>UI 개선</h2>
+            <p class="description">
+                이용자들이 주로 사용할 디바이스가 스마트폰이라는 사실을 생각하지 않고 PC를 기준으로 제작하여,<br>
+                추가로 모바일에 최적화된 UI를 추가 개발하려고 하였습니다.
+            </p>
+            <div class="comparison-container" style="height: 50vh;">
+                <img src="pic/모바일화면1.jpg" alt="모바일 화면 1" class="comparison-image" style="max-height: 100%;">
+                <img src="pic/모바일화면2.jpg" alt="모바일 화면 2" class="comparison-image" style="max-height: 100%;">
+            </div>
+        </div>
+
+        <!-- Slide 5: Content Improvements -->
+        <div class="slide">
+            <h2>겹치는 문항 및 내용 직접 손으로 수정</h2>
+            <div class="comparison-container" style="height: 60vh;">
+                <img src="pic/컨텐츠수정1.png" alt="컨텐츠 수정 1" class="comparison-image" style="max-height: 100%;">
+                <img src="pic/컨텐츠수정2.png" alt="컨텐츠 수정 2" class="comparison-image" style="max-height: 100%;">
+            </div>
+        </div>
+
+        <!-- Slide 6: Sisyphus Game -->
+        <div class="slide">
+            <h2>웹 기반 게임 제작</h2>
+            <div class="comparison-container" style="height: 50vh; margin-bottom: 20px;">
+                <img src="pic/시지프신화 게임.png" alt="시지프 신화 게임 화면" class="comparison-image"
+                    style="max-width: 80%; max-height: 100%;">
+            </div>
+            <p class="description">
+                텍스트게임 정상 작동 확인 및 내용 추가 피드백 후 동일 내용으로 웹기반으로 작동하는 게임 제작.<br>
+                게임은 클릭하면 돌을 위로 옮기고 1, 5, 10, 15, 20, 25회 달성 시 질문이 나오도록 설정.
+            </p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="nav-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress-bar');
+        const totalSlides = slides.length;
+
+        function updateProgress() {
+            const percentage = ((currentSlide + 1) / totalSlides) * 100;
+            progressBar.style.width = percentage + '%';
+        }
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = totalSlides - 1;
+            }
+
+            slides[currentSlide].classList.add('active');
+            updateProgress();
+        }
+
+        // Initialize
+        updateProgress();
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

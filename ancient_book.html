@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고대의 서적</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: transparent;
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        .book-container {
+            width: 80vw;
+            max-width: 800px;
+            height: 90vh;
+            max-height: 850px;
+            background-color: #fdfbf7;
+            background-image: linear-gradient(90deg, #fdfbf7 0%, #fdfbf7 95%, #e0e0e0 100%);
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.6),
+                inset 0 0 60px rgba(139, 69, 19, 0.1);
+            border-radius: 5px 15px 15px 5px;
+            position: relative;
+            padding: 60px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border: 1px solid #d7ccc8;
+        }
+
+        /* Spine decoration on left */
+        .book-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 15px;
+            background: #5d4037;
+            background-image: linear-gradient(to right, #3e2723 0%, #5d4037 50%, #3e2723 100%);
+            border-radius: 5px 0 0 5px;
+            z-index: 10;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            height: 100%;
+            animation: fadeIn 0.8s ease;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            text-align: center;
+            color: #3e2723;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            border-bottom: 3px double #b0bec5;
+            padding-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #37474f;
+            margin-bottom: 30px;
+            text-align: justify;
+            word-break: keep-all;
+            font-weight: 400;
+        }
+
+        strong,
+        em {
+            color: #c0392b;
+        }
+
+        .illuminated-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            padding-right: 20px;
+            padding-top: 5px;
+            color: #8e44ad;
+            font-family: 'Noto Serif KR', serif;
+            font-weight: 700;
+        }
+
+        /* Quote specific style */
+        .quote-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            padding: 0 40px;
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #4e342e;
+            text-align: center;
+            line-height: 2.2;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 3rem;
+            color: #8d6e63;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 20;
+            outline: none;
+            padding: 0 10px;
+        }
+
+        .nav-btn:hover {
+            color: #3e2723;
+        }
+
+        .prev-btn {
+            left: 25px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        /* Scrollbar */
+        .slide::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .slide::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .slide::-webkit-scrollbar-thumb {
+            background: #cfd8dc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="book-container">
+        <!-- Slide 1: Quote -->
+        <div class="slide active">
+            <div class="quote-container">
+                <p class="quote-text">
+                    "그러나 시지프는 신들을 부정하고 바위를 들어올리는 고차원적 성실성을 우리에게 보여준다. 그 역시 모든 게 잘 되었다고 판단한다. 이제부터 주인없는 이 우주가 그에게는 황폐하게도
+                    하찮게도 보이지 않는다. 이 돌 부스러기 하나하나, 어둠이 깊은 이 산의 광물적 빛 하나하나가 그것만으로도 하나의 세계를 이룬다. 산정상을 향한 투쟁 그 자체가 인간의 마음을 가득
+                    채우기에 충분하다.<br><br>
+                    <strong>행복한 시지프를 상상하지 않으면 안 된다.</strong>"
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Project Mission -->
+        <div class="slide">
+            <h2>프로젝트 미션</h2>
+            <p>
+                <span class="illuminated-letter">이</span> 프로젝트의 미션은 <strong>나의 삶의 목적에 맞는 선택을 할 수 있도록 기준이 되어줄 삶의 의미를 찾는
+                    것</strong>입니다.
+            </p>
+            <p>
+                이 미션은 타인의 삶의 의미만을 들여다보았을 때보다 그들의 행동을 같이 살펴보았을 때 달성될 수 있습니다.
+            </p>
+            <p>
+                삶의 의미에 관한 책을 살펴보다 알베르 카뮈의 <em>시지프 신화</em>라는 책을 읽게 되었는데, 신들에게 벌을 받아 끊임없이 정상으로 돌을 굴리는 시지프의 이야기와 그에 대한 카뮈의
+                글을 읽고 많은 생각을 하게 되었습니다.
+            </p>
+        </div>
+
+        <!-- Slide 3: Project Motivation -->
+        <div class="slide">
+            <h2>제작 의도</h2>
+            <p>
+                그래서 이 이야기를 모티브로 질문과 답으로 구성된 게임을 만들어 보고자 했습니다.
+            </p>
+            <p>
+                불특정 다수를 대상으로 설문조사처럼 하는 것이 아닌 지인을 타겟으로 하여 행동을 같이 살펴보고자 하였으며, 제가 좋아하는 게임을 통해서 삶에 대한 생각을 조금 더 깊게 물어볼 수 있을
+                것이라고 생각했습니다.
+            </p>
+        </div>
+
+        <!-- Slide 4: Value Proposition -->
+        <div class="slide">
+            <h2>프로젝트 가치제안</h2>
+            <p>
+                저에게 주는 가치제안은 타인의 행동과 생각을 연관시켜 가치관과 행동, 선택의 관계를 파악하여 제 행동을 통해 저의 가치관에 대한 이해를 높이고, 제가
+                우선시하는 가치는 무엇이고, <strong>삶의 의미는 무엇인지 찾는 것</strong>입니다.
+            </p>
+            <p>
+                타인에게 주는 가치제안은 신화의 이야기를 통해 간접적으로 삶의 의미에 대한 질문을 던져 그들이 조금 더 무의식적으로 하던 생각들을 조금은 알 수 있고, <strong>결과에 대해서
+                    한번정도 생각해볼 기회</strong>를 주는 것입니다.</p> 끝 입니다
+            </p>
+        </div>
+
+        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="nav-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide += direction;
+
+            // Boundary checks
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+    </script>
+</body>
+
+</html>

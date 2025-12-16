@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 작은 마을</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui-layer">
+            <div id="interaction-prompt" class="hidden">SPACE를 눌러 상호작용</div>
+            <div id="dialogue-box" class="hidden">
+                <p id="dialogue-text"></p>
+                <button id="dialogue-next" class="hidden">▼</button>
+            </div>
+            <div id="inventory-box">
+                <h3>INVENTORY</h3>
+                <ul id="inventory-list">
+                    <!-- Items will be added here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fullscreen Overlay for Diary/Book -->
+        <div id="content-modal" class="hidden overlay">
+            <div class="modal-content paper-theme">
+                <h2 id="modal-title">TITLE</h2>
+                <div id="modal-image-container" class="hidden">
+                    <img id="modal-image" src="" alt="Feedback Image">
+                </div>
+                <div id="modal-body">CONTENT</div>
+                <button id="modal-close-btn">닫기 (Close)</button>
+            </div>
+        </div>
+
+        <!-- Iframe Overlay for Workshop -->
+        <div id="browser-modal" class="hidden overlay">
+            <div class="browser-frame">
+                <div class="browser-header">
+                    <span class="browser-title">My Project v1.0</span>
+                    <button id="browser-close-btn">X</button>
+                </div>
+                <iframe id="game-browser" src=""></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
